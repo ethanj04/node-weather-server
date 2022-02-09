@@ -9,10 +9,9 @@ request ( {url, json:true}, (error, {body}) => {
     } else if( body.error ) {
         callback("Unable to find location!", undefined) 
     } else {
-        callback( undefined, body.current.weather_descriptions[0] + ". It is currently " + body.current.temperature + " degrees outside. It feels like " +  body.current.feelslike  +  " outside. ")
+        callback( undefined, body.current.weather_descriptions[0] + ". It is currently " + body.current.temperature + " degrees outside. It feels like " +  body.current.feelslike  +  " outside. \n\n  The wind speed is " + body.current.wind_speed+ " mph and the wind direction is " + body.current.wind_dir +".")
     }
 })
 }
 
 module.exports = forecast
-
